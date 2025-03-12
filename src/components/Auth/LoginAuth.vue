@@ -1,17 +1,20 @@
 <template>
-  <h1 class="text-black">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis eligendi
-    expedita natus iure nobis eos, qui maxime quo aspernatur dolor fugit. Ab
-    quia quaerat impedit minus officia voluptatum nemo ipsam sint commodi?
-    Eaque, quod? In quas optio nihil ut culpa?
-  </h1>
+  <section>
+    <section class="glassmorphic p-4 border-2 border-red-500 rounded-xl">
+      <span class="text-white text-2xl text-center">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </span>
+    </section>
+  </section>
 </template>
 
-<script setup></script>
-
 <style scoped>
-h1 {
-  font-size: 2rem;
-  color: #333;
+.glassmorphic {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.2px);
+  -webkit-backdrop-filter: blur(4.2px);
+  border: 1px solid rgba(255, 255, 255, 0.36);
 }
 </style>
