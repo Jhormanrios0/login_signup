@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+/* TODO Modo Claro */
+:root {
+  /** Colores Nav */
+  --bg-color-nav: oklch(94.22% 0.0269 283.58 / 70%);
+  --border-color-nav: oklch(26.3% 0.1357 276.45 / 98%);
+
+  /** Colores Login */
+}
+
+/* TODO Modo Oscuro */
+.dark-mode {
+  /** Colores Nav */
+  --bg-color-nav: oklch(18.81% 0.082 289.68 / 90%);
+  --border-color-nav: oklch(67.15% 0.1633 284.3 / 91%);
+
+  /** Colores Login */
+}

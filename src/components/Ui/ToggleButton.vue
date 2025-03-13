@@ -1,10 +1,14 @@
 <template>
-  <button class="toggle-btn" @click="toggleTheme">
-    <div :class="{ 'switch-active': isDarkMode }" class="switch">
-      <span class="icon">🌙</span>
-      <span class="icon">☀️</span>
-    </div>
-  </button>
+  <label for="switch" class="switch">
+    <input
+      id="switch"
+      type="checkbox"
+      :checked="isDarkMode"
+      @change="toggleTheme"
+    />
+    <span class="slider"></span>
+    <span class="decoration"></span>
+  </label>
 </template>
 
 <script>
@@ -19,52 +23,86 @@ export default {
       this.$emit("toggle");
     },
   },
+  watch: {
+    isDarkMode(newValue) {
+      this.$el.querySelector("#switch").checked = newValue;
+    },
+  },
 };
 </script>
 
 <style scoped>
-/* 🔹 Botón */
-.toggle-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 10;
-}
-
-/* 🔹 Switch */
 .switch {
-  width: 50px;
-  height: 25px;
-  background: #ddd;
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
+  font-size: 17px;
   position: relative;
-  transition: background 0.4s ease;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  cursor: pointer;
 }
 
-/* 🌙 Estado Activo */
-.switch-active {
-  background: #333;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-/* 🔹 Iconos */
-.icon {
-  font-size: 16px;
-  transition: transform 0.4s ease;
+.slider {
+  --background: #20262c;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: 0.5s;
+  border-radius: 30px;
 }
 
-/* 🌙 Modo Oscuro */
-.switch-active .icon:first-child {
-  transform: translateX(25px);
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #ececd9, -4px 1px 4px 0px #dadada;
+  background: var(--background);
+  transition: 0.5s;
 }
 
-.switch-active .icon:last-child {
-  transform: translateX(-25px);
+.decoration {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 2px;
+  border-radius: 50%;
+  right: 20%;
+  top: 15%;
+  background: #e5f041e6;
+  backdrop-filter: blur(10px);
+  transition: all 0.5s;
+  box-shadow: -7px 10px 0 #e5f041e6, 8px 15px 0 #e5f041e6, -17px 1px 0 #e5f041e6,
+    -20px 10px 0 #e5f041e6, -7px 23px 0 #e5f041e6, -15px 25px 0 #e5f041e6;
+}
+
+input:checked ~ .decoration {
+  transform: translateX(-20px);
+  width: 10px;
+  height: 10px;
+  background: white;
+  box-shadow: -12px 0 0 white, -6px 0 0 1.6px white, 5px 15px 0 1px white,
+    1px 17px 0 white, 10px 17px 0 white;
+}
+
+input:checked + .slider {
+  background-color: #5494de;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #efdf2b, 0 0 10px 0px #efdf2b;
 }
 </style>

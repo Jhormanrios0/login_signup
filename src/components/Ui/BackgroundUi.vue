@@ -46,12 +46,12 @@ export default {
 
       this.particlesArray = [];
       for (let i = 0; i < this.numberOfParticles; i++) {
-        const size = Math.random() * 5 + 1;
+        const size = Math.random() * 8 + 2; // Increased size
         const x = Math.random() * this.canvas.width;
         const y = Math.random() * this.canvas.height;
-        const directionX = (Math.random() * 0.5 - 0.25) * 0.5;
-        const directionY = (Math.random() * 0.5 - 0.25) * 0.5;
-        const color = this.isDarkMode ? "#8376ff" : "#392055";
+        const directionX = (Math.random() * 0.5 - 0.25) * 0.3; // Reduced speed
+        const directionY = (Math.random() * 0.5 - 0.25) * 0.2; // Reduced speed
+        const color = this.isDarkMode ? "#8376ff" : "#725bf9";
 
         this.particlesArray.push(
           new Particle(x, y, directionX, directionY, size, color)
@@ -86,7 +86,7 @@ class Particle {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
     ctx.fillStyle = this.color;
-    ctx.globalAlpha = 0.7;
+    ctx.globalAlpha = 0.4;
     ctx.fill();
     ctx.globalAlpha = 1;
   }
