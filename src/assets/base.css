@@ -12,6 +12,10 @@
   --Bg-boton-2: oklch(35.15% 0.1788 278.42 / 30%);
   --Bg-boton-2-hover: oklch(25.55% 0.0877 276.45);
 
+  --Primary-Component: oklch(54.01% 0.2122 14.59);
+  --Secondary-Component: oklch(87.26% 0.0633 285.01);
+  --Tertiary-Component: oklch(14.69% 0.0781 300.84);
+  --txt-Component: oklch(87.26% 0.0633 285.01);
   /** Colores Login */
 }
 
@@ -28,5 +32,11 @@
 
   --Bg-boton-2: oklch(35.15% 0.1788 278.42 / 30%);
   --Bg-boton-2-hover: oklch(95.61% 0.0214 283.13 / 93%);
+
+  --Primary-Component: oklch(89.58% 0.052 282.91 / 88%);
+  --Secondary-Component: oklch(73.39% 0.1832 356.76 / 98%);
+  --Tertiary-Component: oklch(89.43% 0.0661 349.09);
+  --txt-Component: oklch(28.95% 0.1144 13.28);
+
   /** Colores Login */
 }

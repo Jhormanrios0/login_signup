@@ -1,17 +1,21 @@
 <template>
   <nav class="navbar">
-    <div class="spinner">
+    <RouterLink to="/" class="spinner cursor-pointer">
       <div></div>
       <div></div>
       <div></div>
       <div></div>
       <div></div>
       <div></div>
-    </div>
+    </RouterLink>
     <section class="ElementsBar">
       <article class="flex gap-[2rem]">
-        <button class="uppercase">Sign in</button>
-        <button class="uppercase">Sign up</button>
+        <RouterLink to="/signin" class="EfectBtnNav uppercase cursor-pointer"
+          >Sign in</RouterLink
+        >
+        <RouterLink to="/signup" class="EfectBtnNav uppercase cursor-pointer"
+          >Sign up</RouterLink
+        >
       </article>
     </section>
     <ToggleButton :isDarkMode="isDarkMode" @toggle="$emit('toggle')" />
@@ -101,7 +105,7 @@ defineEmits(["toggle"]);
   display: flex;
   gap: 10px;
 }
-button {
+.EfectBtnNav {
   font-size: 15px;
   padding: 0.7em 2.7em;
   letter-spacing: 0.06em;
@@ -124,13 +128,13 @@ button {
   box-shadow: inset 0 0 10px var(--Bg-boton), 0 0 9px 3px var(--Bg-boton-2);
 }
 
-button:hover {
+.EfectBtnNav:hover {
   color: var(--border-color-nav-hover);
   box-shadow: inset 0 0 1px var(--Bg-boton-hover),
     0 0 9px 1px var(--Bg-boton-2-hover);
 }
 
-button:before {
+.EfectBtnNav:before {
   content: "";
   position: absolute;
   left: -4em;
@@ -147,7 +151,7 @@ button:before {
   );
 }
 
-button:hover:before {
+.EfectBtnNav:hover:before {
   transform: translateX(15em);
 }
 </style>
