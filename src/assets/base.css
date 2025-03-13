@@ -6,6 +6,12 @@
   --bg-color-nav: oklch(94.22% 0.0269 283.58 / 70%);
   --border-color-nav: oklch(26.3% 0.1357 276.45 / 98%);
 
+  --Bg-boton: oklch(26.3% 0.1357 276.45 / 20%);
+  --Bg-boton-hover: oklch(45.3% 0.2683 277.16 / 90%);
+
+  --Bg-boton-2: oklch(35.15% 0.1788 278.42 / 30%);
+  --Bg-boton-2-hover: oklch(25.55% 0.0877 276.45);
+
   /** Colores Login */
 }
 
@@ -13,7 +19,14 @@
 .dark-mode {
   /** Colores Nav */
   --bg-color-nav: oklch(18.81% 0.082 289.68 / 90%);
-  --border-color-nav: oklch(67.15% 0.1633 284.3 / 91%);
 
+  --border-color-nav: oklch(67.15% 0.1633 284.3 / 91%);
+  --border-color-nav-hover: oklch(85.45% 0.0708 283.03 / 95%);
+
+  --Bg-boton: oklch(26.3% 0.1357 276.45 / 20%);
+  --Bg-boton-hover: oklch(92.06% 0.038 284 / 90%);
+
+  --Bg-boton-2: oklch(35.15% 0.1788 278.42 / 30%);
+  --Bg-boton-2-hover: oklch(95.61% 0.0214 283.13 / 93%);
   /** Colores Login */
 }

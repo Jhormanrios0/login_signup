@@ -8,6 +8,12 @@
       <div></div>
       <div></div>
     </div>
+    <section class="ElementsBar">
+      <article class="flex gap-[2rem]">
+        <button class="uppercase">Sign in</button>
+        <button class="uppercase">Sign up</button>
+      </article>
+    </section>
     <ToggleButton :isDarkMode="isDarkMode" @toggle="$emit('toggle')" />
   </nav>
 </template>
@@ -91,9 +97,57 @@ defineEmits(["toggle"]);
   }
 }
 
-.logo {
-  font-size: 1.5rem;
+.ElementsBar {
+  display: flex;
+  gap: 10px;
+}
+button {
+  font-size: 15px;
+  padding: 0.7em 2.7em;
+  letter-spacing: 0.06em;
+  position: relative;
+  font-family: inherit;
+  border-radius: 0.6em;
+  overflow: hidden;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  border: 2px solid var(--border-color-nav);
+  background: linear-gradient(
+    to right,
+    var(--Bg-boton) 1%,
+    transparent 40%,
+    transparent 60%,
+    var(--Bg-boton-2) 100%
+  );
+  color: var(--border-color-nav);
   font-weight: bold;
-  color: var(--text-color-nav);
+  box-shadow: inset 0 0 10px var(--Bg-boton), 0 0 9px 3px var(--Bg-boton-2);
+}
+
+button:hover {
+  color: var(--border-color-nav-hover);
+  box-shadow: inset 0 0 1px var(--Bg-boton-hover),
+    0 0 9px 1px var(--Bg-boton-2-hover);
+}
+
+button:before {
+  content: "";
+  position: absolute;
+  left: -4em;
+  width: 4em;
+  height: 100%;
+  top: 0;
+  transition: transform 0.4s ease-in-out;
+  background: linear-gradient(
+    to right,
+    transparent 1%,
+    var(--Bg-boton-hover) 40%,
+    var(--Bg-boton-2-hover) 60%,
+    transparent 100%
+  );
+}
+
+button:hover:before {
+  transform: translateX(15em);
 }
 </style>
